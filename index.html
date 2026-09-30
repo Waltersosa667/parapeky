@@ -434,16 +434,12 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1379683003887957&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->  
-   <!-- Evento Lead: clic a WhatsApp -->
+<!-- Evento Lead: clic a WhatsApp -->
 <script>
 document.addEventListener('click', function(e){
-  var el = e.target.closest('a, button');
+  var el = e.target.closest('[data-cta], #cta-hero');
   if (!el) return;
-  var href = (el.getAttribute('href') || '').toLowerCase();
-  var txt = (el.textContent || '').toLowerCase();
-  if (href.indexOf('wa.me') > -1 || href.indexOf('whatsapp') > -1 || txt.indexOf('hablar ahora') > -1) {
-    if (typeof fbq === 'function') fbq('track', 'Lead');
-  }
+  if (typeof fbq === 'function') fbq('track', 'Lead');
 }, true);
 </script>
 </head>
