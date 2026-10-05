@@ -439,7 +439,10 @@ src="https://www.facebook.com/tr?id=1379683003887957&ev=PageView&noscript=1"
 document.addEventListener('click', function(e){
   var el = e.target.closest('[data-cta], #cta-hero');
   if (!el) return;
-  if (typeof fbq === 'function') fbq('track', 'Lead');
+ if (typeof fbq === 'function') {
+  fbq('track', 'Lead');
+  fbq('track', 'Contact');
+}
 }, true);
 </script>
 </head>
